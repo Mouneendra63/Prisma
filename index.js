@@ -5,91 +5,91 @@ const prisma=new PrismaClient()
 
 const main=async()=>{
 
-  // Single User insertion
-  // const user=await prisma.user.create({
-  //   data:{
-  //     name:'Mounendra Vanka',
-  //     email:'mouneendravanka@gmail.com',
-  //   }
-  // });
-  // console.log(user);
+  Single User insertion
+  const user=await prisma.user.create({
+    data:{
+      name:'Mounendra Vanka',
+      email:'mouneendravanka@gmail.com',
+    }
+  });
+  console.log(user);
 
 
-  // Multiple User insertion
-  // const user=await prisma.user.createMany({
-  //   data:[{
-  //     name:'Shivam Kumar',
-  //     email:'shivamkumar123@gmail.com'
-  //   },
-  //   {
-  //     name:'Kirety  Chowdary',
-  //     email:'kiretychowdary@gmail.com'
-  //   },
-  //   {
-  //     name:'Bhargav Shanmukh',
-  //     email:'bhargavshanukh@gmail.com'
-  //   }
-  // ]
-  // });
-  // console.log(user);
+  Multiple User insertion
+  const user=await prisma.user.createMany({
+    data:[{
+      name:'Shivam Kumar',
+      email:'shivamkumar123@gmail.com'
+    },
+    {
+      name:'Kirety  Chowdary',
+      email:'kiretychowdary@gmail.com'
+    },
+    {
+      name:'Bhargav Shanmukh',
+      email:'bhargavshanukh@gmail.com'
+    }
+  ]
+  });
+  console.log(user);
 
-  // Read From Database all
-  // const allusers=await prisma.user.findMany();
-  // console.log(allusers);
+  Read From Database all
+  const allusers=await prisma.user.findMany();
+  console.log(allusers);
 
-  // read of particular user
-  // const singleUser=await prisma.user.findUnique({
-  //   where:{
-  //     id:3
-  //   }
-  // });
-  // console.log(singleUser);
+  read of particular user
+  const singleUser=await prisma.user.findUnique({
+    where:{
+      id:3
+    }
+  });
+  console.log(singleUser);
 
-  //Update Data
-  // const userUpdate=await prisma.user.update({
-  //   where:{
-  //     id:4
-  //   },
-  //   data:{
-  //     name:'PB'
-  //   }
-  // });
+  Update Data
+  const userUpdate=await prisma.user.update({
+    where:{
+      id:4
+    },
+    data:{
+      name:'PB'
+    }
+  });
 
-  // console.log(userUpdate);
+  console.log(userUpdate);
 
-  //Upadte Multiple Users
-  // const allUpdate=await prisma.user.updateMany({
-  //   where:{
-  //       id:{
-  //         in:[1,2]
-  //       }
-  //   },
-  //   data:{
-  //     name:"Selected",
-  //   }
-  // });
+  Upadte Multiple Users
+  const allUpdate=await prisma.user.updateMany({
+    where:{
+        id:{
+          in:[1,2]
+        }
+    },
+    data:{
+      name:"Selected",
+    }
+  });
 
-  // console.log(allUpdate);
+  console.log(allUpdate);
 
-  //Delete Single User
-  // const delUser=await prisma.user.delete({
-  //   where:{
-  //     id:1
-  //   }
-  // });
+  Delete Single User
+  const delUser=await prisma.user.delete({
+    where:{
+      id:1
+    }
+  });
 
-  // console.log(delUser);
+  console.log(delUser);
 
-  //Delete Multiple Users
-  // const someUsers=await prisma.user.deleteMany({
-  //   where:{
-  //     id:{
-  //       in:[3,4]
-  //     }
-  //   }
-  // });
+  Delete Multiple Users
+  const someUsers=await prisma.user.deleteMany({
+    where:{
+      id:{
+        in:[3,4]
+      }
+    }
+  });
 
-  // console.log(someUsers);
+  console.log(someUsers);
 
   const clients = [
     {
